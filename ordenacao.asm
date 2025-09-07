@@ -1,10 +1,10 @@
 
-# PROGRAMA 1: ORDENAÃ‡ÃƒO SIMPLES
-# Ordena os nÃºmeros: 4, 3, 9, 5, 2, 1
+# PROGRAMA 1: ORDENAÇÃO SIMPLES
+# Ordena os números: 4, 3, 9, 5, 2, 1
 # Resultado esperado: 1, 2, 3, 4, 5, 9
 
 .data
-    # Nossos 6 nÃºmeros para ordenar
+    # Nossos 6 números para ordenar
     num1: .word 4
     num2: .word 3  
     num3: .word 9
@@ -12,7 +12,7 @@
     num5: .word 2
     num6: .word 1
     
-    # Mensagens para o usuÃ¡rio
+    # Mensagens para o usuário
     msg_inicio: .asciiz "Sequencia original: 4 3 9 5 2 1\n"
     msg_resultado: .asciiz "Sequencia ordenada: "
     espaco: .asciiz " "
@@ -22,12 +22,12 @@
 .globl main
 
 main:
-    # Mostra a sequÃªncia original
+    # Mostra a sequência original
     li $v0, 4
     la $a0, msg_inicio
     syscall
     
-    # Carrega os 6 nÃºmeros nos registradores
+    # Carrega os 6 números nos registradores
     lw $t0, num1    # $t0 = 4
     lw $t1, num2    # $t1 = 3
     lw $t2, num3    # $t2 = 9
@@ -35,7 +35,7 @@ main:
     lw $t4, num5    # $t4 = 2
     lw $t5, num6    # $t5 = 1
     
-    # ORDENAÃ‡ÃƒO SIMPLES - Comparamos todos os pares
+    # ORDENAÇÃO SIMPLES - Comparamos todos os pares
     # Compara $t0 com $t1 (4 com 3)
     ble $t0, $t1, pula1
     # Troca se $t0 > $t1
@@ -73,8 +73,8 @@ pula4:
     move $t5, $t6
     
 pula5:
-    # Agora $t0 tem o menor nÃºmero
-    # Vamos ordenar os outros 5 nÃºmeros ($t1 a $t5)
+    # Agora $t0 tem o menor número
+    # Vamos ordenar os outros 5 números ($t1 a $t5)
     
     # Compara $t1 com $t2
     ble $t1, $t2, pula6
@@ -105,7 +105,7 @@ pula8:
     
 pula9:
     # Agora $t1 tem o segundo menor
-    # Continua ordenando os outros 4 nÃºmeros
+    # Continua ordenando os outros 4 números
     
     # Compara $t2 com $t3
     ble $t2, $t3, pula10
@@ -129,7 +129,7 @@ pula11:
     
 pula12:
     # Agora $t2 tem o terceiro menor
-    # Ordena os Ãºltimos 3 nÃºmeros
+    # Ordena os últimos 3 números
     
     # Compara $t3 com $t4
     ble $t3, $t4, pula13
@@ -145,7 +145,7 @@ pula13:
     move $t5, $t6
     
 pula14:
-    # Finalmente, compara os dois Ãºltimos
+    # Finalmente, compara os dois últimos
     # Compara $t4 com $t5
     ble $t4, $t5, imprimir
     move $t6, $t4
@@ -158,8 +158,8 @@ imprimir:
     la $a0, msg_resultado
     syscall
     
-    # Imprime os nÃºmeros ordenados
-    # Primeiro nÃºmero ($t0)
+    # Imprime os números ordenados
+    # Primeiro número ($t0)
     li $v0, 1
     move $a0, $t0
     syscall
@@ -167,7 +167,7 @@ imprimir:
     la $a0, espaco
     syscall
     
-    # Segundo nÃºmero ($t1)
+    # Segundo número ($t1)
     li $v0, 1
     move $a0, $t1
     syscall
@@ -175,7 +175,7 @@ imprimir:
     la $a0, espaco
     syscall
     
-    # Terceiro nÃºmero ($t2)
+    # Terceiro número ($t2)
     li $v0, 1
     move $a0, $t2
     syscall
@@ -183,7 +183,7 @@ imprimir:
     la $a0, espaco
     syscall
     
-    # Quarto nÃºmero ($t3)
+    # Quarto número ($t3)
     li $v0, 1
     move $a0, $t3
     syscall
@@ -191,7 +191,7 @@ imprimir:
     la $a0, espaco
     syscall
     
-    # Quinto nÃºmero ($t4)
+    # Quinto número ($t4)
     li $v0, 1
     move $a0, $t4
     syscall
@@ -199,7 +199,7 @@ imprimir:
     la $a0, espaco
     syscall
     
-    # Sexto nÃºmero ($t5)
+    # Sexto número ($t5)
     li $v0, 1
     move $a0, $t5
     syscall

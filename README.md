@@ -30,10 +30,12 @@ Este repositório contém os dois programas em Assembly MIPS desenvolvidos para 
 
 ```
 /
-├── ordenacao.asm      # Programa de ordenação da sequência
-├── soma_anos.asm      # Programa de soma dos anos de nascimento
-├── TUTORIAL_MIPS.md   # Tutorial completo de programação MIPS
-└── README.md          # Este arquivo
+├── ordenacao.asm         # Programa de ordenação da sequência
+├── soma_anos.asm         # Programa de soma dos anos de nascimento
+├── TUTORIAL_MIPS.md      # Tutorial completo de programação MIPS
+├── GUIA_COMPLETO_DO_ZERO.md  # Guia passo a passo para fazer o TDE
+├── ROTEIRO_VIDEO.md      # Roteiro detalhado para gravação do vídeo
+└── README.md             # Este arquivo
 ```
 
 ## 🔧 Detalhes Técnicos
@@ -78,6 +80,8 @@ Este repositório contém os dois programas em Assembly MIPS desenvolvidos para 
 - [Tutorial MIPS Using MARS](Tutorial_MIPS_Using_MARS.pdf)
 - [Exemplo Fibonacci](dpetersanderson.github.io/Fibonacci.asm)
 - **[Tutorial Completo MIPS](TUTORIAL_MIPS.md)** - Guia passo a passo criado para este projeto
+- **[Guia Completo do Zero](GUIA_COMPLETO_DO_ZERO.md)** - Tutorial completo para iniciantes
+- **[Roteiro do Vídeo](ROTEIRO_VIDEO.md)** - Script detalhado para gravação do vídeo explicativo
 
 ---
 
