@@ -5,10 +5,8 @@
 .data
     # IMPORTANTE: Substitua pelos anos reais do seu grupo!
     # Se estiver fazendo sozinho, use apenas o ano 2025
-    ano1: .word 2000    # Ano de nascimento do integrante 1
-    ano2: .word 2001    # Ano de nascimento do integrante 2  
-    ano3: .word 1999    # Ano de nascimento do integrante 3
-    ano4: .word 2025    # Para trabalho individual ou 4º integrante
+    ano1: .word 2005    # Ano de nascimento do Caio
+    ano2: .word 2006    # Ano de nascimento do Gastão
     
     # Mensagens para o usuário
     msg_anos: .asciiz "Anos de nascimento: "
@@ -20,11 +18,9 @@
 .globl main
 
 main:
-    # Carrega os 4 anos nos registradores
+    # Carrega os 2 anos nos registradores
     lw $t0, ano1    # $t0 = primeiro ano
     lw $t1, ano2    # $t1 = segundo ano
-    lw $t2, ano3    # $t2 = terceiro ano
-    lw $t3, ano4    # $t3 = quarto ano
     
     # Mostra os anos que estamos somando
     li $v0, 4
@@ -43,28 +39,10 @@ main:
     li $v0, 1
     move $a0, $t1
     syscall
-    li $v0, 4
-    la $a0, espaco
-    syscall
-    
-    # Imprime terceiro ano
-    li $v0, 1
-    move $a0, $t2
-    syscall
-    li $v0, 4
-    la $a0, espaco
-    syscall
-    
-    # Imprime quarto ano
-    li $v0, 1
-    move $a0, $t3
-    syscall
     
     # CÁLCULO DA SOMA
-    # Soma tudo em $t4
-    add $t4, $t0, $t1    # $t4 = ano1 + ano2
-    add $t4, $t4, $t2    # $t4 = $t4 + ano3
-    add $t4, $t4, $t3    # $t4 = $t4 + ano4
+    # Soma os dois anos em $t2
+    add $t2, $t0, $t1    # $t2 = ano1 + ano2
     
     # Mostra o resultado
     li $v0, 4
@@ -73,7 +51,7 @@ main:
     
     # Imprime a soma final
     li $v0, 1
-    move $a0, $t4
+    move $a0, $t2
     syscall
     
     # Quebra de linha final
