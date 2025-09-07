@@ -52,18 +52,7 @@ Este repositório contém os dois programas em Assembly MIPS desenvolvidos para 
 - **Didática**: Cada operação é simples e direta
 - **Registradores**: $t0-$t4 (um para cada ano + resultado)
 
-## 📹 Vídeo Explicativo
 
-🎥 **Link do vídeo no YouTube**: [INSERIR LINK DO VÍDEO AQUI]
-
-*O vídeo contém a explicação detalhada do código com a identificação de todos os integrantes do grupo.*
-
-## 👥 Integrantes do Grupo
-
-- [Nome do Integrante 1]
-- [Nome do Integrante 2]
-- [Nome do Integrante 3]
-- [Nome do Integrante 4]
 
 ## 📝 Observações
 
