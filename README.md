@@ -10,12 +10,13 @@ Este repositório contém os dois programas em Assembly MIPS desenvolvidos para 
 
 1. **Ordenação de Sequência** (`ordenacao.asm`)
    - Ordena a sequência 4,3,9,5,2,1 em forma crescente
-   - Utiliza algoritmo Bubble Sort
-   - Saída esperada: 1,2,3,4,5,9
+   - Método simples e didático: comparação direta entre todos os números
+   - Saída esperada: 1 2 3 4 5 9
 
 2. **Soma de Anos de Nascimento** (`soma_anos.asm`)
-   - Realiza a soma dos anos de nascimento dos acadêmicos do grupo
-   - Para trabalho individual: soma com 2025
+   - Soma simples dos anos de nascimento dos acadêmicos do grupo
+   - Para trabalho individual: inclui soma com 2025
+   - Exibe os anos individuais e o resultado final
 
 ## 🚀 Como Executar
 
@@ -37,16 +38,18 @@ Este repositório contém os dois programas em Assembly MIPS desenvolvidos para 
 ## 🔧 Detalhes Técnicos
 
 ### Programa 1 - Ordenação (ordenacao.asm)
-- **Algoritmo**: Bubble Sort
-- **Entrada**: Array com valores [4, 3, 9, 5, 2, 1]
+- **Método**: Ordenação simples por comparação direta
+- **Entrada**: 6 números individuais [4, 3, 9, 5, 2, 1]
 - **Saída**: Sequência ordenada: 1 2 3 4 5 9
-- **Registradores utilizados**: $t0-$t6, $s0-$s2
+- **Didática**: Cada comparação e troca é feita de forma explícita e comentada
+- **Registradores**: $t0-$t6 (um para cada número + auxiliar para troca)
 
 ### Programa 2 - Soma Anos (soma_anos.asm)
-- **Entrada**: Array com anos de nascimento
-- **Processamento**: Soma iterativa dos valores
-- **Saída**: Resultado da soma
-- **Registradores utilizados**: $t0-$t4, $s0-$s1
+- **Entrada**: 4 anos de nascimento individuais
+- **Processamento**: Soma direta usando registradores
+- **Saída**: Exibe os anos e o resultado da soma
+- **Didática**: Cada operação é simples e direta
+- **Registradores**: $t0-$t4 (um para cada ano + resultado)
 
 ## 📹 Vídeo Explicativo
 

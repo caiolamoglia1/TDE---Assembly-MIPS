@@ -1,55 +1,82 @@
-# Programa 2: Soma de anos de nascimento
-# Para grupos: soma os anos de nascimento dos integrantes
+# PROGRAMA 2: SOMA SIMPLES DE ANOS
+# Soma os anos de nascimento dos integrantes do grupo
 # Para trabalho individual: soma com 2025
 
 .data
-    # Substitua os valores abaixo pelos anos de nascimento dos integrantes do grupo
-    # Se estiver fazendo sozinho, use apenas 2025
-    anos: .word 2000, 2001, 1999, 2025    # Exemplo: 4 anos (grupo de 4 pessoas)
-    quantidade: .word 4                     # Quantidade de anos no array
+    # IMPORTANTE: Substitua pelos anos reais do seu grupo!
+    # Se estiver fazendo sozinho, use apenas o ano 2025
+    ano1: .word 2000    # Ano de nascimento do integrante 1
+    ano2: .word 2001    # Ano de nascimento do integrante 2  
+    ano3: .word 1999    # Ano de nascimento do integrante 3
+    ano4: .word 2025    # Para trabalho individual ou 4º integrante
     
-    msg_resultado: .asciiz "Soma dos anos de nascimento: "
+    # Mensagens para o usuário
+    msg_anos: .asciiz "Anos de nascimento: "
+    msg_soma: .asciiz "\nSoma total: "
+    espaco: .asciiz " "
     quebra: .asciiz "\n"
 
 .text
 .globl main
 
 main:
-    # Carrega endereço base do array e quantidade
-    la $t0, anos             # $t0 = endereço base do array de anos
-    lw $t1, quantidade       # $t1 = quantidade de anos
+    # Carrega os 4 anos nos registradores
+    lw $t0, ano1    # $t0 = primeiro ano
+    lw $t1, ano2    # $t1 = segundo ano
+    lw $t2, ano3    # $t2 = terceiro ano
+    lw $t3, ano4    # $t3 = quarto ano
     
-    # Inicializa soma
-    addi $s0, $zero, 0       # $s0 = soma (inicializada em 0)
-    addi $s1, $zero, 0       # $s1 = contador (i = 0)
-    
-loop_soma:
-    beq $s1, $t1, imprimir_resultado    # Se i == quantidade, vai para impressão
-    
-    # Calcula endereço do elemento atual
-    sll $t2, $s1, 2          # $t2 = i * 4 (offset)
-    add $t3, $t0, $t2        # $t3 = endereço de anos[i]
-    lw $t4, 0($t3)           # $t4 = anos[i]
-    
-    # Adiciona à soma
-    add $s0, $s0, $t4        # soma += anos[i]
-    
-    # Incrementa contador
-    addi $s1, $s1, 1         # i++
-    j loop_soma
-
-imprimir_resultado:
-    # Imprime mensagem
-    li $v0, 4                # Syscall para imprimir string
-    la $a0, msg_resultado    # Carrega mensagem
+    # Mostra os anos que estamos somando
+    li $v0, 4
+    la $a0, msg_anos
     syscall
     
-    # Imprime o resultado da soma
-    li $v0, 1                # Syscall para imprimir inteiro
-    move $a0, $s0            # Valor da soma
+    # Imprime primeiro ano
+    li $v0, 1
+    move $a0, $t0
+    syscall
+    li $v0, 4
+    la $a0, espaco
     syscall
     
-    # Imprime quebra de linha
+    # Imprime segundo ano
+    li $v0, 1
+    move $a0, $t1
+    syscall
+    li $v0, 4
+    la $a0, espaco
+    syscall
+    
+    # Imprime terceiro ano
+    li $v0, 1
+    move $a0, $t2
+    syscall
+    li $v0, 4
+    la $a0, espaco
+    syscall
+    
+    # Imprime quarto ano
+    li $v0, 1
+    move $a0, $t3
+    syscall
+    
+    # CÁLCULO DA SOMA
+    # Soma tudo em $t4
+    add $t4, $t0, $t1    # $t4 = ano1 + ano2
+    add $t4, $t4, $t2    # $t4 = $t4 + ano3
+    add $t4, $t4, $t3    # $t4 = $t4 + ano4
+    
+    # Mostra o resultado
+    li $v0, 4
+    la $a0, msg_soma
+    syscall
+    
+    # Imprime a soma final
+    li $v0, 1
+    move $a0, $t4
+    syscall
+    
+    # Quebra de linha final
     li $v0, 4
     la $a0, quebra
     syscall
